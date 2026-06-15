@@ -1,0 +1,48 @@
+{
+  "name": "@opudoc/opicon-bold-astro",
+  "version": "0.2.0",
+  "description": "An Opicon icon library package for Astro applications (Bold style).",
+  "license": "ISC",
+  "homepage": "https://opicon.net",
+  "bugs": "https://github.com/OpuDoc/opicon/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpuDoc/opicon.git",
+    "directory": "packages/opicon-bold-astro"
+  },
+  "author": "OpuDoc (https://github.com/OpuDoc)",
+  "contributors": [
+    "RafaelK-F (https://github.com/RafaelK-F)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Opicon",
+    "Astro",
+    "Icons",
+    "Icon",
+    "SVG",
+    "Bold"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./Icon.astro": "./src/Icon.astro",
+    "./icons/*": "./src/icons/*"
+  },
+  "scripts": {
+    "build": "node -e \"console.log('@opudoc/opicon-bold-astro uses generated src/icons from root build:icons')\"",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "astro": "^4.0.0 || ^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

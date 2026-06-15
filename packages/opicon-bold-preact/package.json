@@ -1,0 +1,54 @@
+{
+  "name": "@opudoc/opicon-bold-preact",
+  "version": "0.2.0",
+  "description": "An Opicon icon library package for Preact applications (Bold style).",
+  "license": "ISC",
+  "homepage": "https://opicon.net",
+  "bugs": "https://github.com/OpuDoc/opicon/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpuDoc/opicon.git",
+    "directory": "packages/opicon-bold-preact"
+  },
+  "author": "OpuDoc (https://github.com/OpuDoc)",
+  "contributors": [
+    "RafaelK-F (https://github.com/RafaelK-F)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Opicon",
+    "Preact",
+    "Icons",
+    "Icon",
+    "SVG",
+    "Bold"
+  ],
+  "sideEffects": false,
+  "main": "dist/cjs/opicon-bold-preact.js",
+  "module": "dist/esm/opicon-bold-preact.mjs",
+  "types": "dist/opicon-bold-preact.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "pnpm clean && rollup -c rollup.config.mjs",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "dependencies": {
+    "@opudoc/opicon-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup": "^4.59.0",
+    "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "typescript": "^5.8.3",
+    "preact": "^10.24.0"
+  }
+}

@@ -6,24 +6,13 @@
  *   node scripts/publish-all.mjs
  */
 import { execSync } from 'node:child_process';
-import { readdirSync } from 'node:fs';
+import { readdirSync, writeFileSync, unlinkSync, readFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
+import { listStylePackageDirs } from './generate-style-packages.mjs';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
-const STYLES = ['bold', 'broken', 'bulk', 'linear', 'outline', 'twotone'];
-const STYLE_BASE_PACKAGES = [
-  'opicon',
-  'opicon-react',
-  'opicon-preact',
-  'opicon-vue',
-  'opicon-svelte',
-  'opicon-solid',
-  'opicon-react-native',
-  'opicon-angular',
-  'opicon-astro',
-  'opicon-static',
-];
 
 const packages = [
   'packages/shared',
@@ -37,15 +26,43 @@ const packages = [
   'packages/opicon-angular',
   'packages/opicon-astro',
   'packages/opicon-static',
-  ...STYLE_BASE_PACKAGES.flatMap((base) => STYLES.map((style) => `packages/${base}-${style}`)),
+  ...listStylePackageDirs(),
 ];
+
+const npmEnv = { ...process.env };
+let tempNpmrc;
+
+if (process.env.NPM_TOKEN) {
+  tempNpmrc = join(tmpdir(), `opicon-publish-${process.pid}.npmrc`);
+  writeFileSync(tempNpmrc, `//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}\n`, 'utf8');
+  npmEnv.NPM_CONFIG_USERCONFIG = tempNpmrc;
+}
+
+function run(cmd, cwd) {
+  execSync(cmd, { cwd, stdio: 'inherit', env: npmEnv });
+}
+
+function getPackageVersion(pkgDir) {
+  const json = JSON.parse(readFileSync(join(pkgDir, 'package.json'), 'utf8'));
+  return { name: json.name, version: json.version };
+}
+
+function isPublished(name, version) {
+  try {
+    const published = execSync(`npm view ${name} version`, { encoding: 'utf8', env: npmEnv }).trim();
+    return published === version;
+  } catch {
+    return false;
+  }
+}
 
 let whoami = '';
 try {
-  whoami = execSync('npm whoami', { encoding: 'utf8' }).trim();
+  whoami = execSync('npm whoami', { encoding: 'utf8', env: npmEnv }).trim();
 } catch {
   console.error('Nicht bei npm eingeloggt. Token setzen mit:');
-  console.error('  npm config set //registry.npmjs.org/:_authToken DEIN_TOKEN');
+  console.error('  NPM_TOKEN=dein_token node scripts/publish-all.mjs');
+  if (tempNpmrc) unlinkSync(tempNpmrc);
   process.exit(1);
 }
 
@@ -54,8 +71,13 @@ console.log('Publish ohne OTP (Granular Access Token / Passkey-Setup)\n');
 
 process.env.NODE_OPTIONS = [process.env.NODE_OPTIONS, '--max-old-space-size=8192'].filter(Boolean).join(' ');
 
-console.log('Building icons + style packages...\n');
-execSync('node scripts/build-icons.mjs', { cwd: ROOT, stdio: 'inherit' });
+if (!process.env.SKIP_BUILD) {
+  console.log('Building icons + style packages...\n');
+  run('node scripts/build-icons.mjs', ROOT);
+} else {
+  console.log('Skipping icon build (SKIP_BUILD set).\n');
+  run('npx pnpm --filter @opudoc/opicon-shared build', ROOT);
+}
 
 for (const pkg of packages) {
   const pkgDir = join(ROOT, pkg);
@@ -66,11 +88,25 @@ for (const pkg of packages) {
     continue;
   }
 
+  const { name, version } = getPackageVersion(pkgDir);
+  if (isPublished(name, version)) {
+    console.log(`Skipping ${name}@${version} (already on npm)`);
+    continue;
+  }
+
   console.log(`Publishing ${pkg}...`);
-  execSync('npx pnpm publish --access public --no-git-checks', {
-    cwd: pkgDir,
-    stdio: 'inherit',
-  });
+  run('npx pnpm publish --access public --no-git-checks', pkgDir);
+
+  const distDir = join(pkgDir, 'dist');
+  if (pkg !== 'packages/shared') {
+    try {
+      rmSync(distDir, { recursive: true, force: true });
+    } catch {
+      // ignore
+    }
+  }
 }
+
+if (tempNpmrc) unlinkSync(tempNpmrc);
 
 console.log('\nAlle @opudoc/opicon Packages veröffentlicht.');

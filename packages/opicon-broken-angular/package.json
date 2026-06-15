@@ -1,0 +1,54 @@
+{
+  "name": "@opudoc/opicon-broken-angular",
+  "version": "0.2.0",
+  "description": "An Opicon icon library package for Angular applications (Broken style).",
+  "license": "ISC",
+  "homepage": "https://opicon.net",
+  "bugs": "https://github.com/OpuDoc/opicon/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpuDoc/opicon.git",
+    "directory": "packages/opicon-broken-angular"
+  },
+  "author": "OpuDoc (https://github.com/OpuDoc)",
+  "contributors": [
+    "RafaelK-F (https://github.com/RafaelK-F)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Opicon",
+    "Angular",
+    "Icons",
+    "Icon",
+    "SVG",
+    "Broken"
+  ],
+  "sideEffects": false,
+  "main": "dist/cjs/opicon-broken-angular.js",
+  "module": "dist/esm/opicon-broken-angular.mjs",
+  "types": "dist/opicon-broken-angular.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "pnpm clean && rollup -c rollup.config.mjs",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@opudoc/opicon-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup": "^4.59.0",
+    "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "typescript": "^5.8.3",
+    "@angular/core": "^19.0.0"
+  }
+}

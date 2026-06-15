@@ -18,7 +18,7 @@ packages/*-twotone/src/
 packages/opicon-static/icons/
 packages/opicon-static/icon-nodes.json
 packages/opicon-static/manifest.json
-packages/opicon-static-*/icons/
-packages/opicon-static-*/icon-nodes.json
-packages/opicon-static-*/manifest.json
+packages/opicon-*-static/icons/
+packages/opicon-*-static/icon-nodes.json
+packages/opicon-*-static/manifest.json
 .idea/

@@ -7,6 +7,7 @@ const STYLES = ['bold', 'broken', 'bulk', 'linear', 'outline', 'twotone'];
 
 const PACKAGE_META = {
   opicon: {
+    suffix: null,
     build: 'rollup',
     entryBase: 'opicon',
     description: 'An Opicon icon library package for web and JavaScript applications ({style} style).',
@@ -15,6 +16,7 @@ const PACKAGE_META = {
     external: [],
   },
   'opicon-react': {
+    suffix: 'react',
     build: 'rollup',
     entryBase: 'opicon-react',
     description: 'An Opicon icon library package for React applications ({style} style).',
@@ -23,6 +25,7 @@ const PACKAGE_META = {
     external: ['react', 'react/jsx-runtime', '@opudoc/opicon-shared'],
   },
   'opicon-preact': {
+    suffix: 'preact',
     build: 'rollup',
     entryBase: 'opicon-preact',
     description: 'An Opicon icon library package for Preact applications ({style} style).',
@@ -31,6 +34,7 @@ const PACKAGE_META = {
     external: ['preact', 'preact/hooks', '@opudoc/opicon-shared'],
   },
   'opicon-vue': {
+    suffix: 'vue',
     build: 'rollup',
     entryBase: 'opicon-vue',
     description: 'An Opicon icon library package for Vue applications ({style} style).',
@@ -39,6 +43,7 @@ const PACKAGE_META = {
     external: ['vue', '@opudoc/opicon-shared'],
   },
   'opicon-svelte': {
+    suffix: 'svelte',
     build: 'svelte',
     entryBase: 'opicon-svelte',
     description: 'An Opicon icon library package for Svelte applications ({style} style).',
@@ -46,6 +51,7 @@ const PACKAGE_META = {
     peerDependencies: { svelte: '^4.0.0 || ^5.0.0' },
   },
   'opicon-solid': {
+    suffix: 'solid',
     build: 'rollup',
     entryBase: 'opicon-solid',
     description: 'An Opicon icon library package for Solid applications ({style} style).',
@@ -54,6 +60,7 @@ const PACKAGE_META = {
     external: ['solid-js', 'solid-js/web', '@opudoc/opicon-shared'],
   },
   'opicon-react-native': {
+    suffix: 'react-native',
     build: 'rollup',
     entryBase: 'opicon-react-native',
     description: 'An Opicon icon library package for React Native applications ({style} style).',
@@ -66,6 +73,7 @@ const PACKAGE_META = {
     external: ['react', 'react-native', 'react-native-svg', '@opudoc/opicon-shared'],
   },
   'opicon-angular': {
+    suffix: 'angular',
     build: 'rollup',
     entryBase: 'opicon-angular',
     description: 'An Opicon icon library package for Angular applications ({style} style).',
@@ -74,6 +82,7 @@ const PACKAGE_META = {
     external: ['@angular/core', '@opudoc/opicon-shared'],
   },
   'opicon-astro': {
+    suffix: 'astro',
     build: 'astro',
     entryBase: 'opicon-astro',
     description: 'An Opicon icon library package for Astro applications ({style} style).',
@@ -81,6 +90,7 @@ const PACKAGE_META = {
     peerDependencies: { astro: '^4.0.0 || ^5.0.0' },
   },
   'opicon-static': {
+    suffix: 'static',
     build: 'static',
     entryBase: 'opicon-static',
     description: 'Static SVG assets and icon nodes for the Opicon icon library ({style} style).',
@@ -89,6 +99,18 @@ const PACKAGE_META = {
     external: [],
   },
 };
+
+/** @opudoc/opicon-{style} or @opudoc/opicon-{style}-{suffix} */
+function getStylePackageId(parentPkg, style) {
+  const meta = PACKAGE_META[parentPkg];
+  const base = meta.suffix ? `opicon-${style}-${meta.suffix}` : `opicon-${style}`;
+  return {
+    dirName: base,
+    npmName: `@opudoc/${base}`,
+    outputName: base,
+    entryFile: `${base}.ts`,
+  };
+}
 
 function toPascalCase(str) {
   return str
@@ -110,20 +132,20 @@ async function readJson(path) {
   return JSON.parse(await readFile(path, 'utf8'));
 }
 
-async function copySrcFiles(parentPkg, stylePkgDir, meta, style) {
+async function copySrcFiles(parentPkg, stylePkgDir, meta, styleId) {
   const srcDir = join(ROOT, 'packages', parentPkg, 'src');
   const destDir = join(stylePkgDir, 'src');
   await mkdir(destDir, { recursive: true });
 
-  const entryFile = `${meta.entryBase}.ts`;
-  const styledEntry = `${meta.entryBase}-${style}.ts`;
+  const parentEntry = `${meta.entryBase}.ts`;
+  const styledEntry = styleId.entryFile;
 
   for (const file of await readdir(srcDir)) {
     if (file === 'icons' || file === 'icons-map.ts') continue;
     const srcPath = join(srcDir, file);
     if ((await stat(srcPath)).isDirectory()) continue;
 
-    if (file === entryFile && meta.build !== 'astro') {
+    if (file === parentEntry && meta.build !== 'astro') {
       await copyFile(srcPath, join(destDir, styledEntry));
       continue;
     }
@@ -196,12 +218,10 @@ function buildRollupConfig(outputName, external) {
   return `import { createRollupConfig } from '../../scripts/rollup.shared.mjs';\n\nexport default createRollupConfig({\n  entry: 'src/${outputName}.ts',\n  outputName: '${outputName}',\n  external: [${externalList}],\n});\n`;
 }
 
-async function writePackageJson(parentPkgDir, stylePkgDir, parentPkg, style, meta, version) {
+async function writePackageJson(parentPkgDir, stylePkgDir, styleId, meta, version) {
   const parentJson = await readJson(join(parentPkgDir, 'package.json'));
-  const pkgDirName = `${parentPkg}-${style}`;
-  const outputName = `${meta.entryBase}-${style}`;
-  const npmName = `@opudoc/${outputName}`;
-  const styleName = styleLabel(style);
+  const { dirName, npmName, outputName } = styleId;
+  const styleName = styleLabel(styleId.style);
 
   const pkg = {
     name: npmName,
@@ -213,7 +233,7 @@ async function writePackageJson(parentPkgDir, stylePkgDir, parentPkg, style, met
     repository: {
       type: 'git',
       url: 'https://github.com/OpuDoc/opicon.git',
-      directory: `packages/${pkgDirName}`,
+      directory: `packages/${dirName}`,
     },
     author: parentJson.author,
     contributors: parentJson.contributors,
@@ -305,23 +325,33 @@ async function copyTsConfig(parentPkgDir, stylePkgDir) {
   }
 }
 
+async function removeLegacyStylePackages() {
+  const legacyPattern = /^opicon-(react|preact|vue|svelte|solid|react-native|angular|astro|static)-(bold|broken|bulk|linear|outline|twotone)$/;
+  for (const entry of await readdir(join(ROOT, 'packages'), { withFileTypes: true })) {
+    if (!entry.isDirectory() || !legacyPattern.test(entry.name)) continue;
+    await rm(join(ROOT, 'packages', entry.name), { recursive: true, force: true });
+    console.log(`Removed legacy package dir packages/${entry.name}`);
+  }
+}
+
 async function generateStylePackage(parentPkg, style) {
   const meta = PACKAGE_META[parentPkg];
+  const styleId = { ...getStylePackageId(parentPkg, style), style };
   const parentPkgDir = join(ROOT, 'packages', parentPkg);
-  const stylePkgDir = join(ROOT, 'packages', `${parentPkg}-${style}`);
-  const outputName = `${meta.entryBase}-${style}`;
+  const stylePkgDir = join(ROOT, 'packages', styleId.dirName);
+  const { outputName } = styleId;
   const parentJson = await readJson(join(parentPkgDir, 'package.json'));
   const version = parentJson.version;
 
   await mkdir(stylePkgDir, { recursive: true });
-  await writePackageJson(parentPkgDir, stylePkgDir, parentPkg, style, meta, version);
+  await writePackageJson(parentPkgDir, stylePkgDir, styleId, meta, version);
 
   if (meta.build === 'rollup' || meta.build === 'static') {
     await writeFile(join(stylePkgDir, 'rollup.config.mjs'), buildRollupConfig(outputName, meta.external ?? []), 'utf8');
     await copyTsConfig(parentPkgDir, stylePkgDir);
   }
 
-  await copySrcFiles(parentPkg, stylePkgDir, meta, style);
+  await copySrcFiles(parentPkg, stylePkgDir, meta, styleId);
 
   const parentIconsDir = join(parentPkgDir, 'src', 'icons');
   const destIconsDir = join(stylePkgDir, 'src', 'icons');
@@ -338,10 +368,17 @@ async function generateStylePackage(parentPkg, style) {
     await filterStaticAssets(parentPkgDir, stylePkgDir, style);
   }
 
-  console.log(`Generated ${parentPkg}-${style} (${icons.length} icons)`);
+  console.log(`Generated ${styleId.dirName} (${icons.length} icons)`);
+}
+
+export function listStylePackageDirs() {
+  return Object.keys(PACKAGE_META).flatMap((parentPkg) =>
+    STYLES.map((style) => `packages/${getStylePackageId(parentPkg, style).dirName}`),
+  );
 }
 
 export async function generateStylePackages() {
+  await removeLegacyStylePackages();
   for (const parentPkg of Object.keys(PACKAGE_META)) {
     for (const style of STYLES) {
       await generateStylePackage(parentPkg, style);
