@@ -1,0 +1,55 @@
+{
+  "name": "@opudoc/opicon-react-bulk",
+  "version": "0.2.0",
+  "description": "An Opicon icon library package for React applications (Bulk style).",
+  "license": "ISC",
+  "homepage": "https://opicon.net",
+  "bugs": "https://github.com/OpuDoc/opicon/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpuDoc/opicon.git",
+    "directory": "packages/opicon-react-bulk"
+  },
+  "author": "OpuDoc (https://github.com/OpuDoc)",
+  "contributors": [
+    "RafaelK-F (https://github.com/RafaelK-F)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Opicon",
+    "React",
+    "Icons",
+    "Icon",
+    "SVG",
+    "Bulk"
+  ],
+  "sideEffects": false,
+  "main": "dist/cjs/opicon-react-bulk.js",
+  "module": "dist/esm/opicon-react-bulk.mjs",
+  "types": "dist/opicon-react-bulk.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "pnpm clean && rollup -c rollup.config.mjs",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@opudoc/opicon-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup": "^4.59.0",
+    "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "typescript": "^5.8.3",
+    "react": "^18.2.0",
+    "@types/react": "^18.2.37"
+  }
+}

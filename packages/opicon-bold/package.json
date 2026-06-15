@@ -1,0 +1,47 @@
+{
+  "name": "@opudoc/opicon-bold",
+  "version": "0.2.0",
+  "description": "An Opicon icon library package for web and JavaScript applications (Bold style).",
+  "license": "ISC",
+  "homepage": "https://opicon.net",
+  "bugs": "https://github.com/OpuDoc/opicon/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpuDoc/opicon.git",
+    "directory": "packages/opicon-bold"
+  },
+  "author": "OpuDoc (https://github.com/OpuDoc)",
+  "contributors": [
+    "RafaelK-F (https://github.com/RafaelK-F)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Opicon",
+    "Icons",
+    "Icon",
+    "SVG",
+    "JavaScript",
+    "Bold"
+  ],
+  "sideEffects": false,
+  "main": "dist/cjs/opicon-bold.js",
+  "module": "dist/esm/opicon-bold.mjs",
+  "types": "dist/opicon-bold.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "pnpm clean && rollup -c rollup.config.mjs",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup": "^4.59.0",
+    "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "typescript": "^5.8.3"
+  }
+}

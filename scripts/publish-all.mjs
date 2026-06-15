@@ -6,10 +6,24 @@
  *   node scripts/publish-all.mjs
  */
 import { execSync } from 'node:child_process';
+import { readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
+const STYLES = ['bold', 'broken', 'bulk', 'linear', 'outline', 'twotone'];
+const STYLE_BASE_PACKAGES = [
+  'opicon',
+  'opicon-react',
+  'opicon-preact',
+  'opicon-vue',
+  'opicon-svelte',
+  'opicon-solid',
+  'opicon-react-native',
+  'opicon-angular',
+  'opicon-astro',
+  'opicon-static',
+];
 
 const packages = [
   'packages/shared',
@@ -23,6 +37,7 @@ const packages = [
   'packages/opicon-angular',
   'packages/opicon-astro',
   'packages/opicon-static',
+  ...STYLE_BASE_PACKAGES.flatMap((base) => STYLES.map((style) => `packages/${base}-${style}`)),
 ];
 
 let whoami = '';
@@ -37,13 +52,23 @@ try {
 console.log(`npm user: ${whoami}`);
 console.log('Publish ohne OTP (Granular Access Token / Passkey-Setup)\n');
 
-console.log('Building monorepo (icons + packages)...\n');
-execSync('npx pnpm build', { cwd: ROOT, stdio: 'inherit' });
+process.env.NODE_OPTIONS = [process.env.NODE_OPTIONS, '--max-old-space-size=8192'].filter(Boolean).join(' ');
+
+console.log('Building icons + style packages...\n');
+execSync('node scripts/build-icons.mjs', { cwd: ROOT, stdio: 'inherit' });
 
 for (const pkg of packages) {
+  const pkgDir = join(ROOT, pkg);
+  try {
+    readdirSync(pkgDir);
+  } catch {
+    console.warn(`Skipping missing package: ${pkg}`);
+    continue;
+  }
+
   console.log(`Publishing ${pkg}...`);
   execSync('npx pnpm publish --access public --no-git-checks', {
-    cwd: join(ROOT, pkg),
+    cwd: pkgDir,
     stdio: 'inherit',
   });
 }

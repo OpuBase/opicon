@@ -1,6 +1,6 @@
 {
   "name": "@opudoc/opicon-static",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Static SVG assets and icon nodes for the Opicon icon library.",
   "license": "ISC",
   "homepage": "https://opicon.net",

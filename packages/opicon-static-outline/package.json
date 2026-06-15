@@ -1,0 +1,50 @@
+{
+  "name": "@opudoc/opicon-static-outline",
+  "version": "0.2.0",
+  "description": "Static SVG assets and icon nodes for the Opicon icon library (Outline style).",
+  "license": "ISC",
+  "homepage": "https://opicon.net",
+  "bugs": "https://github.com/OpuDoc/opicon/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpuDoc/opicon.git",
+    "directory": "packages/opicon-static-outline"
+  },
+  "author": "OpuDoc (https://github.com/OpuDoc)",
+  "contributors": [
+    "RafaelK-F (https://github.com/RafaelK-F)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Opicon",
+    "Icons",
+    "Icon",
+    "SVG",
+    "Static",
+    "Outline"
+  ],
+  "sideEffects": false,
+  "main": "dist/cjs/opicon-static-outline.js",
+  "module": "dist/esm/opicon-static-outline.mjs",
+  "types": "dist/opicon-static-outline.d.ts",
+  "files": [
+    "dist",
+    "icons",
+    "icon-nodes.json",
+    "manifest.json"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "pnpm clean && rollup -c rollup.config.mjs",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup": "^4.59.0",
+    "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "typescript": "^5.8.3"
+  }
+}

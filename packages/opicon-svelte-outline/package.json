@@ -1,0 +1,49 @@
+{
+  "name": "@opudoc/opicon-svelte-outline",
+  "version": "0.2.0",
+  "description": "An Opicon icon library package for Svelte applications (Outline style).",
+  "license": "ISC",
+  "homepage": "https://opicon.net",
+  "bugs": "https://github.com/OpuDoc/opicon/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpuDoc/opicon.git",
+    "directory": "packages/opicon-svelte-outline"
+  },
+  "author": "OpuDoc (https://github.com/OpuDoc)",
+  "contributors": [
+    "RafaelK-F (https://github.com/RafaelK-F)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Opicon",
+    "Svelte",
+    "Icons",
+    "Icon",
+    "SVG",
+    "Outline"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": "./src/opicon-svelte-outline.ts",
+    "./Icon.svelte": "./src/Icon.svelte",
+    "./icons/*": "./src/icons/*"
+  },
+  "scripts": {
+    "build": "node -e \"console.log('@opudoc/opicon-svelte-outline ships Svelte source from src/')\"",
+    "prepublishOnly": "node ../../scripts/build-icons.mjs"
+  },
+  "peerDependencies": {
+    "svelte": "^4.0.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "@opudoc/opicon-shared": "workspace:*"
+  },
+  "devDependencies": {}
+}

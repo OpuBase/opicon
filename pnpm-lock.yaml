@@ -73,12 +73,312 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
+  packages/opicon-angular-bold:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.2.25(rxjs@7.8.2)(zone.js@0.15.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-angular-broken:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.2.25(rxjs@7.8.2)(zone.js@0.15.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-angular-bulk:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.2.25(rxjs@7.8.2)(zone.js@0.15.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-angular-linear:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.2.25(rxjs@7.8.2)(zone.js@0.15.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-angular-outline:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.2.25(rxjs@7.8.2)(zone.js@0.15.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-angular-twotone:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.2.25(rxjs@7.8.2)(zone.js@0.15.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
   packages/opicon-astro:
     dependencies:
       astro:
         specifier: ^4.0.0 || ^5.0.0
         version: 5.18.2(@types/node@25.9.2)(rollup@4.61.1)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
     devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-astro-bold:
+    dependencies:
+      astro:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 5.18.2(@types/node@25.9.2)(rollup@4.61.1)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-astro-broken:
+    dependencies:
+      astro:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 5.18.2(@types/node@25.9.2)(rollup@4.61.1)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-astro-bulk:
+    dependencies:
+      astro:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 5.18.2(@types/node@25.9.2)(rollup@4.61.1)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-astro-linear:
+    dependencies:
+      astro:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 5.18.2(@types/node@25.9.2)(rollup@4.61.1)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-astro-outline:
+    dependencies:
+      astro:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 5.18.2(@types/node@25.9.2)(rollup@4.61.1)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-astro-twotone:
+    dependencies:
+      astro:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 5.18.2(@types/node@25.9.2)(rollup@4.61.1)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-bold:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-broken:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-bulk:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-linear:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-outline:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
       typescript:
         specifier: ^5.8.3
         version: 5.9.3
@@ -108,7 +408,269 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
+  packages/opicon-preact-bold:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      preact:
+        specifier: ^10.24.0
+        version: 10.29.2
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-preact-broken:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      preact:
+        specifier: ^10.24.0
+        version: 10.29.2
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-preact-bulk:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      preact:
+        specifier: ^10.24.0
+        version: 10.29.2
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-preact-linear:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      preact:
+        specifier: ^10.24.0
+        version: 10.29.2
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-preact-outline:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      preact:
+        specifier: ^10.24.0
+        version: 10.29.2
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-preact-twotone:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      preact:
+        specifier: ^10.24.0
+        version: 10.29.2
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
   packages/opicon-react:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-bold:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-broken:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-bulk:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-linear:
     dependencies:
       '@opudoc/opicon-shared':
         specifier: workspace:*
@@ -170,7 +732,417 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
+  packages/opicon-react-native-bold:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      react-native:
+        specifier: '*'
+        version: 0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1)
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-native-svg:
+        specifier: ^15.11.0
+        version: 15.15.5(react-native@0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-native-broken:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      react-native:
+        specifier: '*'
+        version: 0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1)
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-native-svg:
+        specifier: ^15.11.0
+        version: 15.15.5(react-native@0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-native-bulk:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      react-native:
+        specifier: '*'
+        version: 0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1)
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-native-svg:
+        specifier: ^15.11.0
+        version: 15.15.5(react-native@0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-native-linear:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      react-native:
+        specifier: '*'
+        version: 0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1)
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-native-svg:
+        specifier: ^15.11.0
+        version: 15.15.5(react-native@0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-native-outline:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      react-native:
+        specifier: '*'
+        version: 0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1)
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-native-svg:
+        specifier: ^15.11.0
+        version: 15.15.5(react-native@0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-native-twotone:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      react-native:
+        specifier: '*'
+        version: 0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1)
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-native-svg:
+        specifier: ^15.11.0
+        version: 15.15.5(react-native@0.85.3(@babel/core@7.29.7)(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-outline:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-react-twotone:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      '@types/react':
+        specifier: ^18.2.37
+        version: 18.3.31
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
   packages/opicon-solid:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      solid-js:
+        specifier: ^1.9.0
+        version: 1.9.13
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-solid-bold:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      solid-js:
+        specifier: ^1.9.0
+        version: 1.9.13
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-solid-broken:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      solid-js:
+        specifier: ^1.9.0
+        version: 1.9.13
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-solid-bulk:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      solid-js:
+        specifier: ^1.9.0
+        version: 1.9.13
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-solid-linear:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      solid-js:
+        specifier: ^1.9.0
+        version: 1.9.13
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-solid-outline:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      solid-js:
+        specifier: ^1.9.0
+        version: 1.9.13
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-solid-twotone:
     dependencies:
       '@opudoc/opicon-shared':
         specifier: workspace:*
@@ -213,6 +1185,114 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
+  packages/opicon-static-bold:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-static-broken:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-static-bulk:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-static-linear:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-static-outline:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/opicon-static-twotone:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
   packages/opicon-svelte:
     dependencies:
       '@opudoc/opicon-shared':
@@ -222,7 +1302,229 @@ importers:
         specifier: ^4.0.0 || ^5.0.0
         version: 4.2.20
 
+  packages/opicon-svelte-bold:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      svelte:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 4.2.20
+
+  packages/opicon-svelte-broken:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      svelte:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 4.2.20
+
+  packages/opicon-svelte-bulk:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      svelte:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 4.2.20
+
+  packages/opicon-svelte-linear:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      svelte:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 4.2.20
+
+  packages/opicon-svelte-outline:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      svelte:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 4.2.20
+
+  packages/opicon-svelte-twotone:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+      svelte:
+        specifier: ^4.0.0 || ^5.0.0
+        version: 4.2.20
+
+  packages/opicon-twotone:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
   packages/opicon-vue:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.35(typescript@5.9.3)
+
+  packages/opicon-vue-bold:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.35(typescript@5.9.3)
+
+  packages/opicon-vue-broken:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.35(typescript@5.9.3)
+
+  packages/opicon-vue-bulk:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.35(typescript@5.9.3)
+
+  packages/opicon-vue-linear:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.35(typescript@5.9.3)
+
+  packages/opicon-vue-outline:
+    dependencies:
+      '@opudoc/opicon-shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.3(rollup@4.61.1)
+      rollup:
+        specifier: ^4.59.0
+        version: 4.61.1
+      rollup-plugin-dts:
+        specifier: ^6.2.3
+        version: 6.4.1(rollup@4.61.1)(typescript@5.9.3)
+      rollup-plugin-esbuild:
+        specifier: ^6.2.1
+        version: 6.2.1(esbuild@0.27.7)(rollup@4.61.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.35(typescript@5.9.3)
+
+  packages/opicon-vue-twotone:
     dependencies:
       '@opudoc/opicon-shared':
         specifier: workspace:*
