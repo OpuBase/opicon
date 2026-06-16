@@ -264,7 +264,6 @@ async function writePackageJson(parentPkgDir, stylePkgDir, styleId, meta, versio
     };
     pkg.scripts = {
       build: `node -e "console.log('${npmName} ships Svelte source from src/')"`,
-      prepublishOnly: 'node ../../scripts/build-icons.mjs',
     };
   }
 

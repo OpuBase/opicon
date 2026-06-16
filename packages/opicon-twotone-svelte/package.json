@@ -36,8 +36,7 @@
     "./icons/*": "./src/icons/*"
   },
   "scripts": {
-    "build": "node -e \"console.log('@opudoc/opicon-twotone-svelte ships Svelte source from src/')\"",
-    "prepublishOnly": "node ../../scripts/build-icons.mjs"
+    "build": "node -e \"console.log('@opudoc/opicon-twotone-svelte ships Svelte source from src/')\""
   },
   "peerDependencies": {
     "svelte": "^4.0.0 || ^5.0.0"

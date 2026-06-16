@@ -42,6 +42,27 @@ function run(cmd, cwd) {
   execSync(cmd, { cwd, stdio: 'inherit', env: npmEnv });
 }
 
+function tryPublish(pkgDir) {
+  try {
+    execSync('npx pnpm publish --access public --no-git-checks', {
+      cwd: pkgDir,
+      stdio: 'pipe',
+      env: npmEnv,
+      encoding: 'utf8',
+    });
+    return true;
+  } catch (error) {
+    const output = `${error.stdout ?? ''}${error.stderr ?? ''}`;
+    if (/previously published versions/i.test(output) || /You cannot publish over/i.test(output)) {
+      console.warn(`Already published (continuing): ${pkgDir}`);
+      return true;
+    }
+    if (error.stdout) process.stdout.write(error.stdout);
+    if (error.stderr) process.stderr.write(error.stderr);
+    throw error;
+  }
+}
+
 function getPackageVersion(pkgDir) {
   const json = JSON.parse(readFileSync(join(pkgDir, 'package.json'), 'utf8'));
   return { name: json.name, version: json.version };
@@ -95,7 +116,7 @@ for (const pkg of packages) {
   }
 
   console.log(`Publishing ${pkg}...`);
-  run('npx pnpm publish --access public --no-git-checks', pkgDir);
+  tryPublish(pkgDir);
 
   const distDir = join(pkgDir, 'dist');
   if (pkg !== 'packages/shared') {
