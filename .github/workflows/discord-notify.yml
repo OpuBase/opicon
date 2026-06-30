@@ -1,0 +1,90 @@
+name: Discord notifications
+
+on:
+  push:
+  pull_request:
+    types: [opened, closed, reopened, synchronize, ready_for_review]
+  create:
+  delete:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post GitHub activity to Discord
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          EVENT: ${{ github.event_name }}
+          REPO: ${{ github.repository }}
+          ACTOR: ${{ github.actor }}
+          REF: ${{ github.ref_name }}
+          REF_TYPE: ${{ github.ref_type }}
+          SHA: ${{ github.sha }}
+          SERVER_URL: ${{ github.server_url }}
+          PR_ACTION: ${{ github.event.action }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_MERGED: ${{ github.event.pull_request.merged }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          set -euo pipefail
+
+          case "$EVENT" in
+            push)
+              if [ "$REF_TYPE" = "tag" ]; then
+                title="Tag pushed"
+                description="**${ACTOR}** pushed tag \`${REF}\`"
+              else
+                title="Push"
+                description="**${ACTOR}** pushed to \`${REF}\`"
+              fi
+              link="${SERVER_URL}/${REPO}/commit/${SHA}"
+              ;;
+            pull_request)
+              if [ "$PR_ACTION" = "closed" ] && [ "$PR_MERGED" = "true" ]; then
+                title="Pull request merged"
+                description="**${ACTOR}** merged **#${PR_NUMBER}** — ${PR_TITLE}"
+              else
+                title="Pull request ${PR_ACTION}"
+                description="**${ACTOR}** — **#${PR_NUMBER}** ${PR_TITLE}"
+              fi
+              link="$PR_URL"
+              ;;
+            create)
+              title="${REF_TYPE} created"
+              description="**${ACTOR}** created ${REF_TYPE} \`${REF}\`"
+              link="${SERVER_URL}/${REPO}"
+              ;;
+            delete)
+              title="${REF_TYPE} deleted"
+              description="**${ACTOR}** deleted ${REF_TYPE} \`${REF}\`"
+              link="${SERVER_URL}/${REPO}"
+              ;;
+            *)
+              title="Repository activity"
+              description="**${ACTOR}** triggered \`${EVENT}\`"
+              link="${SERVER_URL}/${REPO}"
+              ;;
+          esac
+
+          payload=$(jq -nc \
+            --arg username "OpuDoc/opicon" \
+            --arg title "$title" \
+            --arg description "$description" \
+            --arg url "$link" \
+            --arg repo "$REPO" \
+            '{
+              username: $username,
+              embeds: [{
+                title: $title,
+                description: $description,
+                url: $url,
+                color: 5814783,
+                footer: { text: $repo }
+              }]
+            }')
+
+          curl -fsS -H "Content-Type: application/json" -d "$payload" "$WEBHOOK"
